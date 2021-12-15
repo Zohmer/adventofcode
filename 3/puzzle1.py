@@ -2,7 +2,7 @@ dataFile = open('./input', 'r')
 data = dataFile.read()
 data = data.split('\n')
 
-binaryGrid = [[0] * len(data[0])] * len(data)
+binaryGrid = [[0] * len(data[0]) for i in range(len(data))]
 for i in range(len(data)):
     for j in range(len(data[i])):
         binaryNum = data[i]
