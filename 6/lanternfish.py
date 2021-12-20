@@ -3,7 +3,7 @@ class lanternfish:
         self.cycle = cycle
 
     def spawn(self):
-        newFish = lanternfish(8)
+        newFish = lanternfish(9)
         return newFish
 
     def dayChange(self):
