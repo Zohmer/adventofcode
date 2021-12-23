@@ -1,10 +1,11 @@
 import lanternfish
+import optimizedLanternFish
 
 dataFile = open('./input', 'r')
 data = dataFile.read().split(',')
 dataFile.close()
 
-#data = [3,4,3,1,2]
+data = [3,4,3,1,2]
 
 fishSchool = []
 for fish in data:
@@ -14,7 +15,7 @@ for fish in data:
 #outputFile.write('')
 #outputFile.close()
 i = 0
-for day in range(256):
+for day in range(80):
     for fish in fishSchool:
         newFish = fish.dayChange()
         if newFish:
@@ -33,3 +34,12 @@ for day in range(256):
 
 populationSize = len(fishSchool)
 print(f"Population: {populationSize}")
+
+optimizedFish = optimizedLanternFish.OptimizedLanternFish(data)
+day = 0
+for day in range(256):
+    day += 1
+    print(f"Day: {day}")
+    optimizedFish.dayChange()
+
+print(f"Optimized population: {len(optimizedFish.schoolOfFish)}")
